@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peritech — Assistência técnica pericial em engenharia</title>
+<meta name="description" content="Assistência técnica em perícias judiciais e extrajudiciais nas áreas de engenharia mecânica, engenharia da computação e criptoativos. Análise de laudos, quesitos e pareceres técnicos.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230F1A24%22/%3E%3Crect%20x%3D%2229%22%20y%3D%229%22%20width%3D%226%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%23E4EAED%22%20transform%3D%22rotate%280%2032%2032%29%22/%3E%3Crect%20x%3D%2229%22%20y%3D%229%22%20width%3D%226%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%23E4EAED%22%20transform%3D%22rotate%28-45%2032%2032%29%22/%3E%3Crect%20x%3D%2229%22%20y%3D%229%22%20width%3D%226%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%23E4EAED%22%20transform%3D%22rotate%28-90%2032%2032%29%22/%3E%3Crect%20x%3D%2229%22%20y%3D%229%22%20width%3D%226%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%23E4EAED%22%20transform%3D%22rotate%28-135%2032%2032%29%22/%3E%3Crect%20x%3D%2229%22%20y%3D%229%22%20width%3D%226%22%20height%3D%228%22%20rx%3D%221%22%20fill%3D%22%23E4EAED%22%20transform%3D%22rotate%28180%2032%2032%29%22/%3E%3Cg%20transform%3D%22rotate%2845%2032%2032%29%22%3E%3Cline%20x1%3D%2232%22%20y1%3D%2216%22%20x2%3D%2232%22%20y2%3D%2210%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222.5%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%227.5%22%20r%3D%222.6%22%20fill%3D%22none%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2890%2032%2032%29%22%3E%3Cline%20x1%3D%2232%22%20y1%3D%2216%22%20x2%3D%2232%22%20y2%3D%2210%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222.5%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%227.5%22%20r%3D%222.6%22%20fill%3D%22none%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28135%2032%2032%29%22%3E%3Cline%20x1%3D%2232%22%20y1%3D%2216%22%20x2%3D%2232%22%20y2%3D%2210%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222.5%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%227.5%22%20r%3D%222.6%22%20fill%3D%22none%22%20stroke%3D%22%235FB3A3%22%20stroke-width%3D%222%22/%3E%3C/g%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2214.5%22%20fill%3D%22none%22%20stroke%3D%22%23E4EAED%22%20stroke-width%3D%223.5%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%223.5%22%20fill%3D%22%235FB3A3%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0F1A24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Tema escuro */
+    --bg: #0F1A24;        /* fundo da página */
+    --surface: #15222E;   /* quadros e cartões */
+    --deep: #0A121A;      /* contato e rodapé */
+    --text: #E4EAED;      /* texto principal */
+    --muted: #9AA8B2;     /* texto secundário */
+    --rule: #263544;      /* linhas e bordas */
+    --accent: #5FB3A3;    /* verde-técnico */
+    --accent-hover: #7CC5B7;
+    --on-accent: #0F1A24; /* texto sobre o verde */
+
+    --sans: "Archivo", system-ui, sans-serif;
+    --serif: "Source Serif 4", Georgia, serif;
+
+    --wrap: 1120px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  h1, h2, h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+    line-height: 1.08;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-stretch: 80%; }
+  h3 { font-size: 1.3rem; font-stretch: 90%; }
+  p { margin: 0 0 1em; max-width: 64ch; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; height: 68px;
+  }
+  .logo {
+    font-family: var(--sans); font-weight: 800; font-size: 1.35rem;
+    font-stretch: 75%; text-decoration: none; letter-spacing: 0.01em;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo svg { flex: none; }
+  .nav { display: flex; align-items: center; gap: 28px; font-family: var(--sans); font-size: 0.95rem; }
+  .nav a { text-decoration: none; color: var(--muted); }
+  .nav a:hover { color: var(--text); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--sans); font-weight: 600; font-size: 0.98rem;
+    padding: 12px 20px; border-radius: 4px; text-decoration: none;
+    border: 1.5px solid var(--text); cursor: pointer; background: none; color: var(--text);
+  }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn-ghost { border-color: var(--muted); }
+  .btn-ghost:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .nav .btn { padding: 9px 16px; color: var(--on-accent); }
+
+  @media (max-width: 760px) {
+    .nav a:not(.btn) { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(64px, 11vw, 132px) 0 clamp(56px, 8vw, 96px); }
+  .hero h1 {
+    font-size: clamp(2.6rem, 7.2vw, 5.6rem);
+    font-stretch: 68%;
+    font-weight: 750;
+    line-height: 0.98;
+    max-width: 15ch;
+    letter-spacing: -0.015em;
+  }
+
+  /* A cota (linha de dimensão) é o elemento-assinatura do site */
+  .cota-wrap { position: relative; max-width: 860px; margin: 28px 0 32px; }
+  .cota { display: block; width: 100%; height: 46px; color: var(--accent); overflow: visible; }
+  .cota-label {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: var(--bg); padding: 0 12px; white-space: nowrap;
+    font-family: var(--sans); font-size: 0.85rem; font-stretch: 90%; color: var(--accent);
+    opacity: 0; animation: fade 0.4s 1.4s forwards;
+  }
+  @media (max-width: 420px) { .cota-label { font-size: 0.75rem; padding: 0 8px; } }
+  .cota .draw { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 1.4s 0.3s ease-out forwards; }
+  .cota .tick { opacity: 0; animation: fade 0.4s 1.4s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .cota .draw { animation: none; stroke-dashoffset: 0; }
+    .cota .tick, .cota-label { animation: none; opacity: 1; }
+  }
+
+  .hero-lede { font-size: 1.28rem; color: var(--muted); max-width: 56ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+  /* ---------- Seções ---------- */
+  section { scroll-margin-top: 80px; }
+  .block { padding: clamp(64px, 9vw, 112px) 0; border-top: 1px solid var(--rule); }
+  .block-head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px 64px; align-items: end; margin-bottom: 56px; }
+  .block-head p { color: var(--muted); margin: 0; }
+  @media (max-width: 820px) { .block-head { grid-template-columns: 1fr; } }
+
+  /* Serviços */
+  .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--surface); border: 1px solid var(--rule); }
+  .area { padding: clamp(28px, 3vw, 40px); }
+  .area + .area { border-left: 1px solid var(--rule); }
+  .area h3 { font-size: 1.6rem; font-stretch: 78%; margin-bottom: 6px; }
+  .area .sub { font-family: var(--sans); font-size: 0.95rem; color: var(--accent); margin-bottom: 22px; }
+  .area ul { list-style: none; margin: 0; padding: 0; }
+  .area li { padding: 12px 0; border-top: 1px solid var(--rule); }
+  .area li:last-child { border-bottom: 1px solid var(--rule); }
+  @media (max-width: 820px) {
+    .areas { grid-template-columns: 1fr; }
+    .area + .area { border-left: 0; border-top: 1px solid var(--rule); }
+  }
+
+  .servicos-gerais { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .servicos-gerais h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .servicos-gerais p { font-size: 1rem; color: var(--muted); margin: 0; }
+  @media (max-width: 820px) { .servicos-gerais { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* Como atuamos — é uma sequência real, por isso os números */
+  .etapas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; position: relative; counter-reset: etapa; }
+  .etapas::before {
+    content: ""; position: absolute; top: 19px; left: 20px; right: 20px;
+    border-top: 1px solid var(--accent);
+  }
+  .etapas li { position: relative; counter-increment: etapa; }
+  .etapas li::before {
+    content: counter(etapa);
+    display: grid; place-items: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--accent); color: var(--accent);
+    font-family: var(--sans); font-weight: 700; font-size: 1rem;
+    position: relative; margin-bottom: 20px;
+  }
+  .etapas h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .etapas p { font-size: 1rem; color: var(--muted); margin: 0; }
+  @media (max-width: 820px) {
+    .etapas { grid-template-columns: 1fr; gap: 28px; padding-left: 60px; }
+    .etapas::before { top: 20px; bottom: 20px; left: 19px; right: auto; border-top: 0; border-left: 1px solid var(--accent); }
+    .etapas li::before { position: absolute; left: -60px; top: -6px; margin: 0; }
+  }
+
+  /* Sobre */
+  .sobre { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; }
+  .credenciais { background: var(--surface); border: 1px solid var(--rule); padding: 32px; align-self: start; }
+  .credenciais h3 { font-size: 1.1rem; margin-bottom: 16px; }
+  .credenciais dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 1rem; }
+  .credenciais dt { font-family: var(--sans); color: var(--muted); font-size: 0.92rem; padding-top: 2px; }
+  .credenciais dd { margin: 0; }
+  @media (max-width: 820px) { .sobre { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* Contato */
+  .contato { background: var(--deep); }
+  .contato .block-head p { color: #AEB8BF; }
+  .contato-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; }
+  .canais { list-style: none; margin: 0; padding: 0; }
+  .canais li { padding: 18px 0; border-top: 1px solid #2E3B47; }
+  .canais li:last-child { border-bottom: 1px solid #2E3B47; }
+  .canais .rot { display: block; font-family: var(--sans); font-size: 0.9rem; color: #AEB8BF; }
+  .canais a { font-family: var(--sans); font-size: 1.2rem; font-weight: 600; text-decoration: none; }
+  .canais a:hover { text-decoration: underline; }
+
+  form { display: grid; gap: 18px; }
+  .linha { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  label { display: grid; gap: 6px; font-family: var(--sans); font-size: 0.92rem; color: #C9D2D8; }
+  input, textarea, select {
+    font: inherit; font-family: var(--serif); font-size: 1rem;
+    background: var(--surface); color: var(--text);
+    border: 1px solid #3A4856; border-radius: 4px; padding: 12px 14px;
+  }
+  input:focus, textarea:focus, select:focus { outline: 2px solid #5FB3A3; outline-offset: 0; border-color: transparent; }
+  textarea { min-height: 140px; resize: vertical; }
+  .contato .btn-primary { justify-self: start; }
+  .form-aviso { font-family: var(--sans); font-size: 0.95rem; color: #9FD9CC; min-height: 1.4em; margin: 0; }
+  @media (max-width: 820px) {
+    .contato-grid { grid-template-columns: 1fr; gap: 48px; }
+    .linha { grid-template-columns: 1fr; gap: 18px; }
+  }
+
+  /* Ajustes para celular */
+  @media (max-width: 600px) {
+    body { font-size: 1.0625rem; }
+    .hero-lede { font-size: 1.125rem; }
+    .hero-actions .btn { width: 100%; justify-content: center; padding: 15px 20px; }
+    .contato .btn-primary { justify-self: stretch; justify-content: center; padding: 15px 20px; }
+    .block-head { margin-bottom: 36px; }
+    .area li { padding: 14px 0; }
+    footer .wrap { padding-bottom: 96px; } /* espaço para o botão do WhatsApp */
+  }
+
+  /* Botão flutuante do WhatsApp */
+  .whats {
+    position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+    width: 58px; height: 58px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: #25D366; color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  }
+  .whats:hover { background: #1EBE5A; }
+  .whats svg { width: 30px; height: 30px; }
+
+  /* Rodapé */
+  footer { background: var(--deep); color: #8C98A1; border-top: 1px solid #2E3B47; font-family: var(--sans); font-size: 0.9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 28px; padding-bottom: 28px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Peritech, voltar ao início">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect x="29" y="9" width="6" height="8" rx="1" fill="#E4EAED" transform="rotate(0 32 32)"/><rect x="29" y="9" width="6" height="8" rx="1" fill="#E4EAED" transform="rotate(-45 32 32)"/><rect x="29" y="9" width="6" height="8" rx="1" fill="#E4EAED" transform="rotate(-90 32 32)"/><rect x="29" y="9" width="6" height="8" rx="1" fill="#E4EAED" transform="rotate(-135 32 32)"/><rect x="29" y="9" width="6" height="8" rx="1" fill="#E4EAED" transform="rotate(180 32 32)"/><g transform="rotate(45 32 32)"><line x1="32" y1="16" x2="32" y2="10" stroke="#5FB3A3" stroke-width="2.5"/><circle cx="32" cy="7.5" r="2.6" fill="none" stroke="#5FB3A3" stroke-width="2"/></g><g transform="rotate(90 32 32)"><line x1="32" y1="16" x2="32" y2="10" stroke="#5FB3A3" stroke-width="2.5"/><circle cx="32" cy="7.5" r="2.6" fill="none" stroke="#5FB3A3" stroke-width="2"/></g><g transform="rotate(135 32 32)"><line x1="32" y1="16" x2="32" y2="10" stroke="#5FB3A3" stroke-width="2.5"/><circle cx="32" cy="7.5" r="2.6" fill="none" stroke="#5FB3A3" stroke-width="2"/></g><circle cx="32" cy="32" r="14.5" fill="none" stroke="#E4EAED" stroke-width="3.5"/><circle cx="32" cy="32" r="3.5" fill="#5FB3A3"/></svg>
+      Peritech
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#como-atuamos">Como atuamos</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn-primary" href="#contato">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Engenharia a serviço da prova técnica</h1>
+
+      <div class="cota-wrap">
+      <svg class="cota" viewBox="0 0 860 46" preserveAspectRatio="none" aria-hidden="true">
+        <line class="tick" x1="1" y1="6" x2="1" y2="40" stroke="currentColor" stroke-width="1.5"/>
+        <line class="tick" x1="859" y1="6" x2="859" y2="40" stroke="currentColor" stroke-width="1.5"/>
+        <path class="draw" d="M2 23 H858" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <path class="tick" d="M2 23 l12 -5 v10 z M858 23 l-12 -5 v10 z" fill="currentColor"/>
+      </svg>
+      <span class="cota-label">mecânica · computação · criptoativos</span>
+      </div>
+
+      <p class="hero-lede">Assistência técnica em perícias judiciais e extrajudiciais, com especialidade em criptoativos. Analisamos laudos, formulamos quesitos e elaboramos pareceres que dão ao advogado base técnica sólida para defender o seu cliente.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contato">Enviar um caso para análise</a>
+        <a class="btn btn-ghost" href="#servicos">Ver áreas de atuação</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="servicos" aria-labelledby="t-servicos">
+    <div class="wrap">
+      <div class="block-head">
+        <h2 id="t-servicos">Áreas de atuação</h2>
+        <p>Atuamos como assistentes técnicos das partes, em processos cíveis, trabalhistas e arbitragens, e em análises técnicas fora do processo, quando a empresa precisa entender o que aconteceu antes de decidir o que fazer.</p>
+      </div>
+
+      <div class="areas">
+        <article class="area">
+          <h3>Engenharia mecânica</h3>
+          <p class="sub">Veículos, máquinas e equipamentos</p>
+          <ul>
+            <li>Falhas e defeitos em veículos e componentes</li>
+            <li>Vícios de fabricação e de reparo</li>
+            <li>Acidentes com máquinas e equipamentos industriais</li>
+            <li>Segurança de máquinas e conformidade com a NR-12</li>
+            <li>Avaliação de danos, orçamentos e lucros cessantes</li>
+          </ul>
+        </article>
+        <article class="area">
+          <h3>Engenharia da computação</h3>
+          <p class="sub">Sistemas, software e provas digitais</p>
+          <ul>
+            <li>Análise de sistemas e software em disputas contratuais</li>
+            <li>Autenticidade de arquivos, e-mails e mensagens</li>
+            <li>Preservação e análise de provas digitais</li>
+            <li>Falhas em sistemas embarcados e eletrônica veicular</li>
+            <li>Contratos de TI: entrega, prazo e qualidade</li>
+          </ul>
+        </article>
+        <article class="area">
+          <h3>Criptoativos</h3>
+          <p class="sub">Blockchain, carteiras e corretoras</p>
+          <ul>
+            <li>Rastreamento de transações em blockchain</li>
+            <li>Identificação e localização de ativos em carteiras</li>
+            <li>Análise de fraudes, golpes e esquemas de pirâmide</li>
+            <li>Treinamento e análise de DeFI e Web3</li>
+            <li>Avaliação de patrimônio em criptoativos em partilhas e execuções</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="servicos-gerais">
+        <div>
+          <h3>Impugnação de laudos</h3>
+          <p>Leitura crítica do laudo do perito do juízo, apontando falhas de método, omissões e conclusões sem sustentação.</p>
+        </div>
+        <div>
+          <h3>Quesitos e acompanhamento</h3>
+          <p>Elaboração de quesitos pertinentes e presença nas vistorias, para que nada relevante fique de fora.</p>
+        </div>
+        <div>
+          <h3>Pareceres técnicos</h3>
+          <p>Documento técnico fundamentado, escrito para ser entendido pelo juiz e usado pelo advogado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="como-atuamos" aria-labelledby="t-como">
+    <div class="wrap">
+      <div class="block-head">
+        <h2 id="t-como">Como atuamos</h2>
+        <p>Do primeiro contato até o parecer, cada etapa é combinada com o advogado responsável.</p>
+      </div>
+      <ol class="etapas">
+        <li>
+          <h3>Análise do caso</h3>
+          <p>Lemos os autos e os documentos técnicos e dizemos, com franqueza, o que a engenharia pode sustentar.</p>
+        </li>
+        <li>
+          <h3>Quesitos</h3>
+          <p>Formulamos os quesitos e indicamos as provas técnicas que fortalecem a sua tese.</p>
+        </li>
+        <li>
+          <h3>Perícia</h3>
+          <p>Acompanhamos a vistoria e os ensaios ao lado do perito do juízo e registramos tudo.</p>
+        </li>
+        <li>
+          <h3>Parecer</h3>
+          <p>Entregamos o parecer técnico ou a impugnação do laudo dentro do prazo processual.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="sobre" aria-labelledby="t-sobre">
+    <div class="wrap sobre">
+      <div>
+        <h2 id="t-sobre" style="margin-bottom: 28px;">Sobre a Peritech</h2>
+        <p>A Peritech nasceu da prática em perícias judiciais. Unimos conhecimento de engenharia mecânica e de engenharia da computação para atender casos em que máquinas, veículos e sistemas digitais estão no centro da disputa.</p>
+        <p>Somos também especialistas em criptoativos. Rastreamos transações em blockchain, identificamos carteiras e analisamos operações em corretoras, num campo em que ainda há poucos peritos com formação técnica.</p>
+        <p>Nosso trabalho é técnico e independente: avaliamos cada caso com rigor, apontamos tanto os pontos fortes quanto os riscos e escrevemos pareceres claros, que o juiz consegue ler e o advogado consegue usar.</p>
+      </div>
+      <aside class="credenciais" aria-label="Responsável técnico">
+        <h3>Responsável técnico</h3>
+        <dl>
+          <dt>Nome</dt><dd>João Pedro Maia Sadi</dd>
+          <dt>Formação</dt><dd>Engenharia mecânica — ITA</dd>
+          <dt>Especialidades</dt><dd>Mecânica, computação e criptoativos</dd>
+          <dt>Registro</dt><dd>CREA-MG nº 421.994</dd>
+          <dt>Atendimento</dt><dd>Capitais e região, com atuação remota em todo o país</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block contato" id="contato" aria-labelledby="t-contato">
+    <div class="wrap">
+      <div class="block-head">
+        <h2 id="t-contato">Fale conosco</h2>
+        <p>Conte brevemente o caso e o prazo. Respondemos em até um dia útil.</p>
+      </div>
+      <div class="contato-grid">
+        <ul class="canais">
+          <li><span class="rot">WhatsApp</span><a href="https://wa.me/5531900000000">(31) 90000-0000</a></li>
+          <li><span class="rot">E-mail</span><a href="mailto:jpmaiasadi@peritech.com.br">jpmaiasadi@peritech.com.br</a></li>
+        </ul>
+
+        <!-- Para ativar: crie um formulário grátis em formspree.io e troque SEU_ID abaixo -->
+        <form id="form-contato" action="https://formspree.io/f/SEU_ID" method="POST">
+          <div class="linha">
+            <label>Nome<input name="nome" type="text" autocomplete="name" required></label>
+            <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="linha">
+            <label>Telefone<input name="telefone" type="tel" autocomplete="tel"></label>
+            <label>Área do caso
+              <select name="area">
+                <option>Engenharia mecânica</option>
+                <option>Engenharia da computação</option>
+                <option>Criptoativos</option>
+                <option>Não tenho certeza</option>
+              </select>
+            </label>
+          </div>
+          <label>Resumo do caso e prazo<textarea name="mensagem" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+          <p class="form-aviso" id="form-aviso" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano">2026</span> Peritech Consultoria e Perícias em Engenharia LTDA</span>
+    <span>CNPJ 62.533.580/0001-30</span>
+  </div>
+</footer>
+
+<a class="whats" href="https://wa.me/5531900000000" aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 9.9 9.9 5.2 16 5.2s11 4.7 11 10.6-4.9 10.6-11 10.6zm6-7.9c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.3-.3-.4-.6-.5z"/></svg>
+</a>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('form-contato');
+  const aviso = document.getElementById('form-aviso');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (form.action.includes('SEU_ID')) {
+      aviso.textContent = 'O formulário ainda não está ligado. Use o WhatsApp ou o e-mail ao lado.';
+      return;
+    }
+    aviso.textContent = 'Enviando…';
+    try {
+      const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (r.ok) { form.reset(); aviso.textContent = 'Mensagem enviada. Respondemos em até um dia útil.'; }
+      else { aviso.textContent = 'A mensagem não foi enviada. Tente de novo ou fale pelo WhatsApp.'; }
+    } catch {
+      aviso.textContent = 'Sem conexão com o servidor do formulário. Fale pelo WhatsApp ou pelo e-mail.';
+    }
+  });
+</script>
+</body>
+</html>
