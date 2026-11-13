@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peritech.com.br/sitemap.xml
